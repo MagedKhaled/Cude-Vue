@@ -2,6 +2,7 @@
 
 <script>
     export default {
+        
         props: ['productName','productCost','productId'],
     
     methods: {
@@ -10,9 +11,7 @@
             method:'delete'
             })
 
-        
-        this.products = await response.json();
-        this.$emit('products', this.products);
+        this.$emit('productsChange', await response.json() );
       },
       async editRecord() {      
         this.$emit('toEdit', this.productId,this.productName,this.productCost)
