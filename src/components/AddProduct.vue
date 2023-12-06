@@ -31,7 +31,7 @@ async function addRecord() {
 
 
 <template>
-  <table class="table" v-show="toAdd">
+  <table class="table mt-5" v-show="toAdd">
     <thead>
       <tr>
         <th>Name</th>
@@ -40,9 +40,9 @@ async function addRecord() {
       </tr>
     </thead>
     <tbody>
-      <td><input type="text" v-model="name" name="Name"></td>
-      <td><input type="text" v-model="cost" name="Cost"></td>
-      <td><button class="btn btn-success" @click="addRecord"><slot></slot></button></td>
+      <td><input class="form-control" type="text" v-model="name" name="Name"></td>
+      <td><input class="form-control" type="text" v-model="cost" name="Cost"></td>
+      <td><button class="btn btn-success w-100 bg-success" @click="addRecord"><slot></slot></button></td>
     </tbody>
   </table>
 </template>

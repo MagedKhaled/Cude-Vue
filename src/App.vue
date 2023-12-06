@@ -50,7 +50,7 @@ function resetProducts(prod) {
 
 
 <template >
-  <div class="m-5">
+  <div class="my-5 m-auto form-control w-75">
     <div v-show="isEmpty">
 
 <table class="table">
@@ -79,4 +79,6 @@ function resetProducts(prod) {
 </template>
 
 
-<style></style>
+<style>
+
+</style>

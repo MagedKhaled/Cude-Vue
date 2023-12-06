@@ -26,9 +26,11 @@
     <tr>
         <td>{{ productName }}</td>
         <td>{{ productCost }} $</td>
-        <td><button class="btn btn-danger" @click="deleteRecord" >Delete</button></td>
-        <td><button class="btn btn-primary" @click="editRecord" >Edit</button></td>
+        <td><button class="btn bg-danger" @click="deleteRecord" >Delete</button></td>
+        <td><button class="btn btn-primary w-50" @click="editRecord" >Edit</button></td>
     </tr>
 </template>
 
-<style></style>
+<style scoped>
+
+</style>
