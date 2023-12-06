@@ -1,24 +1,23 @@
 
 
-<script>
-    export default {
-        
-        props: ['productName','productCost','productId'],
-    
-    methods: {
-        async deleteRecord() {      
-        const response = await fetch(`http://localhost:8000/${this.productId}/`,{
-            method:'delete'
-            })
+<script setup>
+    import {ref} from 'vue'
+    const props = defineProps(['productName','productCost','productId'])
+    const emit = defineEmits(['productsChange', 'toEdit'])
 
-        this.$emit('productsChange', await response.json() );
-      },
-      async editRecord() {      
-        this.$emit('toEdit', this.productId,this.productName,this.productCost)
-      },
 
+
+    async function deleteRecord(){
+        const response = await fetch(`http://localhost:8000/${props.productId}/`,{
+            method: 'delete'
+        })
+        emit('productsChange', await response.json() );
     }
-}
+
+    async function editRecord(){
+        emit('toEdit',props.productId,props.productName,props.productCost)
+    }
+
 
 </script>
 
