@@ -15,7 +15,9 @@ async function fetchData() {
   toEditData.value = { ...toEditData.value}
   isEmpty = true
   const response = await fetch("http://localhost:8000/");
+  
   products.value = await response.json();
+  
 }
 
 function editProducts(prod) {
@@ -63,8 +65,8 @@ function resetProducts(prod) {
     </tr>
   </thead>
   <tbody>
-    <ProductRow v-for="(product) in products" :key="product.id" :product-name="product.Name"
-      :product-cost="product.Cost" :product-id="product.id" @productsChange="resetProducts" @toEdit="toEditShow" />
+    <ProductRow v-for="(product) in products" :key="product.id" :product-name="product.name"
+      :product-cost="product.cost" :product-id="product.id" @productsChange="resetProducts" @toEdit="toEditShow" />
 
   </tbody>
 </table>
